@@ -58,11 +58,12 @@ var fetchDetailData = function (url, cb) {
     console.log(images.length);
 
     images.each(function(){
-      var image = $(this).find('img');
+      let image = $(this).find('img');
+      let item;
       if(image.attr('src9')){
-        var item = image.attr('src9');
+        item = image.attr('src9');
       } else {
-        var item = image.attr('src');
+        item = image.attr('src');
       }
       postData.push(item)
     });
