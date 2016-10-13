@@ -1,0 +1,11 @@
+{
+  "name": "vue-carmodel",
+  "description": "Car Model of Autohome BBS Web Application built with Vue.js",
+  "author": "wheato <wheato2010@gmail.com>",
+  "private": true,
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "iconv-lite": "^0.4.13",
+    "request": "^2.75.0"
+  }
+}
