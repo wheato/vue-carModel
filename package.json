@@ -9,7 +9,6 @@
     "server": "supervisor ./server/app.js"
   },
   "dependencies": {
-    "moment": "^2.15.1",
     "vue": "^2.0.1",
     "vue-resource": "^1.0.3",
     "vue-router": "^2.0.0",
