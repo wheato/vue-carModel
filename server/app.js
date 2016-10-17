@@ -84,13 +84,15 @@ var router = function (req, res){
       fetchListData(query.num, (data) => {
         console.log('================ write list data ================');
         res.setHeader('Content-Type', 'application/json; charset=utf-8');
+        console.log(data);
         res.write(JSON.stringify(data));
         res.end()
       });
       break;
 
     case '/detail':
-      fetchDetailData(query.link, (data) => {
+      var link = decodeURIComponent(query.link);
+      fetchDetailData(link, (data) => {
         console.log('================ write detail data ================');
         res.setHeader('Content-Type', 'application/json; charset=utf-8');
         res.write(JSON.stringify(data));

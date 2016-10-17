@@ -10,7 +10,7 @@ export default new Router({
   mode: 'history',
   scrollBehavior: () => ({ y: 0 }),
   routes: [
-    { path: '/:page', component: ListView},
+    { path: '/:num', component: ListView},
     { path: '/detail/:link', component: DetailView },
     { path: '*', redirect: `/1` }
   ]
