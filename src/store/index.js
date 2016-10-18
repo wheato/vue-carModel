@@ -8,7 +8,7 @@ export default new Vuex.Store({
   state: {
     currentPage: 1,
     postList: {},
-    imageList: {}
+    detailData: {}
   },
 
   actions: {
@@ -26,7 +26,7 @@ export default new Vuex.Store({
     },
 
     getDetail: ({commit, dispatch, state}, {link}) => {
-      return api.fetchDetailData(link).then(images => commit('SET_IMAGES', {images}))
+      return api.fetchDetailData(link).then(detailData => commit('SET_IMAGES', {detailData}))
     }
 
   },
@@ -40,8 +40,8 @@ export default new Vuex.Store({
       state.postList = body;
     },
 
-    SET_IMAGES (state, {images}){
-      state.imageList = images;
+    SET_IMAGES (state, {detailData}){
+      state.detailData = detailData;
     }
   },
 

@@ -56,11 +56,17 @@ var fetchDetailData = function (url, cb) {
     encoding: null
   }, (err, res, body) => {
 
-    let postData = [];
+    let postData = {
+      images: [],
+      title: '',
+      src_link: url
+    };
     body = iconv.decode(body, 'GBK');
     const $ = cheerio.load(body);
+    //Get image list
     const images = $('#F0').find('.conright').find('.conttxt').find('.pic');
-    console.log(images.length);
+    //Get post title
+    const title = $('.maxtitle').text();
 
     images.each(function(){
       let image = $(this).find('img');
@@ -70,9 +76,10 @@ var fetchDetailData = function (url, cb) {
       } else {
         item = image.attr('src');
       }
-      postData.push(item)
+      postData.images.push(item)
     });
 
+    postData.title = title;
     cb && cb(postData);
   });
 };

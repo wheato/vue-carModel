@@ -1,7 +1,8 @@
 <template>
     <div class="m-detail">
+        <h3>{{ detailData.title }}</h3>
         <ul class="img-list">
-            <li v-for="image in images" class="item">
+            <li v-for="image in detailData.images" class="item">
                 <img v-bind:src="image" alt="">
             </li>
         </ul>
@@ -20,7 +21,7 @@
         name: 'm-detail',
         data() {
             return {
-                images: []
+                detailData: {}
             }
         },
         computed() {
@@ -29,7 +30,7 @@
         beforeMount() {
 
             fetchDetailData(this.$store).then(() => {
-                this.images = this.$store.state.imageList
+                this.detailData = this.$store.state.detailData
             })
 
         }
@@ -40,6 +41,9 @@
     .m-detail{
         width: 800px;
         margin: 0 auto;
+    }
+    .m-detail h3{
+        padding: 20px;
     }
     .img-list{
         list-style: none;

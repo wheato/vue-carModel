@@ -14,15 +14,15 @@ function fetch(path) {
 module.exports = {
 
   fetchListData: function(num){
-    return fetch(`list?num=${num}`).then((list) => {
-      return list;
+    return fetch(`list?num=${num}`).then((data) => {
+      return data;
     })
   },
 
   fetchDetailData: function(uri){
     uri = encodeURIComponent(uri);
-    return fetch(`detail?link=${uri}`).then((images) => {
-      return images;
+    return fetch(`detail?link=${uri}`).then((data) => {
+      return data;
     })
   }
   
