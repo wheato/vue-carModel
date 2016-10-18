@@ -1,7 +1,7 @@
 <template>
     <div class="m-list">
         <ul class="post-list">
-            <li v-for="(item, index) in displayList" class="post" v-bind:index="index">
+            <li v-for="(item, index) in displayData.list" class="post" v-bind:index="index">
                 <router-link :to="'/detail/' + encodeURIComponent(item.link).replace('/\./', '|')" tag="div">
                     <figure>
                         <img v-bind:src="item.cover" alt="" class="cover"/>
@@ -30,12 +30,12 @@
         },
         data() {
             return {
-                displayList: []
+                displayData: {}
             }
         },
         beforeMount () {
             fetchListData(this.$store).then(() => {
-                this.displayList = this.$store.state.postList
+                this.displayData = this.$store.state.postList
             })
         }
     }
@@ -61,6 +61,13 @@
         border-radius: 3px;
         background: #fff;
         margin-bottom: 4%;
+        -webkit-transition: -webkit-transform .5s ease;
+        transition: transform .5s ease;
+    }
+    .post:hover{
+        -webkit-transform: translate3d(0, -6px, 0);
+        transform: translate3d(0, -6px, 0);
+        cursor: pointer;
     }
     .post .title{
         padding: 5px;

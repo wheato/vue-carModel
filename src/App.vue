@@ -3,9 +3,11 @@
         <header class="m-header">
             <h1>媳妇当车模</h1>
         </header>
-        <transition name="fade" mode="out-in">
-            <router-view class="view"></router-view>
-        </transition>
+        <div class="m-content">
+            <transition name="fade" mode="out-in">
+                <router-view class="view"></router-view>
+            </transition>
+        </div>
     </div>
 </template>
 
@@ -26,9 +28,12 @@
         color: #4c5357;
     }
     .m-header{
+        position: fixed;
         background-color: #282E34;
         height: 60px;
-        margin: 0 0 25px;
+        width: 100%;
+        left: 0;
+        top: 0;
     }
     .m-header h1{
         font-size: 22px;
@@ -36,5 +41,8 @@
         color: #fff;
         line-height: 60px;
         text-align: center;
+    }
+    .m-content{
+        padding: 85px 0 0;
     }
 </style>

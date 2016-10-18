@@ -21,7 +21,11 @@ var fetchListData = function (num, cb){
     gzip: true,
     encoding: null
   }, (err, res, body) => {
-    let resData = [];
+    let resData = {
+      list: [],
+      total: 0,
+      current: num
+    };
     body = iconv.decode(body, 'GBK');
     const $ = cheerio.load(body);
     let list = $('.wrap').find('.content').find('li');
@@ -32,12 +36,13 @@ var fetchListData = function (num, cb){
         'title': $(this).find('p').find('a').text(),
         'link': $(this).find('p').find('a').attr('href'),
         'classify': $(this).find('.font12NoLine').find('a').text(),
-        // 'views': $(this).find('.read'),
-        // 'comment_num': $(this).find('.comment'),
         'cover': $(this).find('.pic_txt').find('img').attr('src')
       };
-      resData.push(item);
+      resData.list.push(item);
     });
+
+    //加入页数
+    resData.total = ($('.gopage').find('.fs').attr('title').match(/(\d)+/))[0];
 
     cb && cb(resData);
   })

@@ -14,7 +14,7 @@ export default new Vuex.Store({
   actions: {
     getPostList: ({commit, dispatch, state}, {num}) => {
       commit('SET_CURRENT_PAGE', {num});
-      return api.fetchListData(num).then(list => commit('SET_LIST', {list}))
+      return api.fetchListData(num).then(body => commit('SET_LIST', {body}))
     },
 
     nextPage: ({dispatch, state}) => {
@@ -36,8 +36,8 @@ export default new Vuex.Store({
       state.currentPage = num[0];
     },
 
-    SET_LIST (state, {list}){
-      state.postList = list;
+    SET_LIST (state, {body}){
+      state.postList = body;
     },
 
     SET_IMAGES (state, {images}){
