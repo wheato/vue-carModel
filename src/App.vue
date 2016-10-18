@@ -34,6 +34,7 @@
         width: 100%;
         left: 0;
         top: 0;
+        z-index: 9;
     }
     .m-header h1{
         font-size: 22px;
