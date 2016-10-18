@@ -20,7 +20,8 @@ module.exports = {
   },
 
   fetchDetailData: function(uri){
-    return fetch(`detail?url=${uri}`).then((images) => {
+    uri = encodeURIComponent(uri);
+    return fetch(`detail?link=${uri}`).then((images) => {
       return images;
     })
   }

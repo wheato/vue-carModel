@@ -2,7 +2,13 @@
 
 一个基于Vue.js 2.0 开发的浏览汽车之家-媳妇当车模分类的App, 数据是用Node.js爬过来的
 
-cl## TODO
+## TODO
+* 头部fixed
+* 记录滚动位置
+* 增加hover效果
+* 在list接口中返回页码数据
+* 图像lazyload
+* 页面过渡动画
 
 ## License
 
