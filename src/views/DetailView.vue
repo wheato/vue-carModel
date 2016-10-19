@@ -39,15 +39,15 @@
 
 <style>
     .m-detail{
-        width: 730px;
-        padding: 0 35px;
-        margin: 0 auto;
+        width: 540px;
+        padding: 0 80px 80px;
+        margin: 0 auto 40px;
         background: #fff;
         -webkit-border-radius: 10px;
         border-radius: 10px;
     }
     .m-detail h3{
-        padding: 30px 0;
+        padding: 80px 0;
         font-size: 20px;
     }
     .img-list{
@@ -55,6 +55,9 @@
     }
     .img-list .item{
         margin-bottom: 20px;
+    }
+    .img-list .item:last-child{
+        margin: 0;
     }
     .img-list .item img{
         width: 100%;

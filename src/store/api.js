@@ -1,6 +1,6 @@
 import Vue from 'vue'
 
-const API_ROOT = 'http://localhost:8787/';
+const API_ROOT = 'http://192.168.1.50:8787/';
 
 function fetch(path) {
   return new Promise((resolve, reject) => {

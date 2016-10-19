@@ -44,6 +44,19 @@ var fetchListData = function (num, cb){
     //加入页数
     resData.total = ($('.gopage').find('.fs').attr('title').match(/(\d)+/))[0];
 
+    //修正数据的长度
+    if(resData.list.length % 4 != 0){
+      let fix_len = 4 - (resData.list.length % 4);
+      for(let i = 0; i < fix_len; i++){
+        resData.list.push({
+          'title': '',
+          'link': '',
+          'classify': '',
+          'cover': ''
+        });
+      }
+    }
+
     cb && cb(resData);
   })
 };
