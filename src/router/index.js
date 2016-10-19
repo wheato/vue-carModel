@@ -8,16 +8,19 @@ import DetailView from '../views/DetailView.vue'
 
 export default new Router({
   mode: 'history',
-  scrollBehavior(to, from, savedPosition) {
-    if(savedPosition){
-      return savedPosition;
-    } else {
-      return {x: 0, y: 0}
-    }
-  },
   routes: [
-    { path: '/:num', component: ListView},
-    { path: '/detail/:link', component: DetailView },
+    { path: '/:num', name: 'list', component: ListView},
+    { path: '/detail/:link', name: 'detail', component: DetailView },
     { path: '*', redirect: `/1` }
-  ]
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    if(to.name == 'list' && from.name == 'detail'){
+      if(savedPosition){
+        return savedPosition;
+      } else {
+        return {x: 0, y: 0}
+      }
+    }
+
+  }
 })

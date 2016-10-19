@@ -39,7 +39,6 @@
                     } else {
                         for(let i = 4 - rightGap; i > 0; i--){
                             let className = 'nav-item';
-                            console.log(current - i);
                             nav_arr.push({
                                 'num': current - i,
                                 className
@@ -52,7 +51,6 @@
                     });
                 } else {
                     for(let i = 0; i <= leftGap; i++){
-                        console.log((i + 1) == current);
                         let className = (i + 1) == current ? 'nav-item current' : 'nav-item';
                         nav_arr.push({
                             'num': i + 1,

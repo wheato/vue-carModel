@@ -1,8 +1,7 @@
 <template>
     <li class="post">
         <router-link :to="'/detail/' + encodeURIComponent(item.link).replace('/\./', '|')" tag="div">
-            <figure>
-                <img v-bind:src="item.cover" alt="" class="cover"/>
+            <figure :style="'background-image:url(' + item.cover + ');'" class="cover">
             </figure>
             <p class="title">{{ item.title }}</p>
         </router-link>
@@ -38,7 +37,10 @@
         line-height: 1.4;
     }
     .cover{
-        display: block;
-        width: 100%;
+        padding-bottom: 75%;
+        background-color: #D9E1E7;
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        background-size: cover;
     }
 </style>

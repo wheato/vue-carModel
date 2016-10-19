@@ -46,4 +46,14 @@
     .m-content{
         padding: 85px 0 0;
     }
+    .fade-enter-active, .fade-leave-active{
+        transition: all .2s ease;
+    }
+
+
+    .fade-enter, .fade-leave-active{
+        opacity: 0;
+    }
+
+
 </style>

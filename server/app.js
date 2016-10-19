@@ -91,12 +91,12 @@ var router = function (req, res){
 
   console.log('request:: ' + pathname + '    query:: ');
 
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Content-Type', 'application/json; charset=utf-8');
   switch (pathname){
     case '/list':
       fetchListData(query.num, (data) => {
         console.log('================ write list data ================');
-        res.setHeader('Content-Type', 'application/json; charset=utf-8');
-        console.log(data);
         res.write(JSON.stringify(data));
         res.end()
       });
@@ -106,7 +106,6 @@ var router = function (req, res){
       var link = decodeURIComponent(query.link);
       fetchDetailData(link, (data) => {
         console.log('================ write detail data ================');
-        res.setHeader('Content-Type', 'application/json; charset=utf-8');
         res.write(JSON.stringify(data));
         res.end()
       });

@@ -52,7 +52,7 @@
 
 <style>
     .m-list{
-        width: 800px;
+        width: 1000px;
         margin: 0 auto;
         font-size: 14px;
     }
